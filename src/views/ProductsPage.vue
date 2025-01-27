@@ -1,7 +1,8 @@
 <template>
 
   <div class="grid">
-    <RouterLink :to="`/product/${product.id}`" v-for="product in products" :key="product.id">
+    <RouterLink :to="{ name: 'discountCollection', params: { id: product.id } }" v-for="product in products"
+      :key="product.id">
       <img :src="product.images[0]" alt="">
       <p>{{ product.title }}</p>
     </RouterLink>

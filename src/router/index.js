@@ -27,9 +27,29 @@ const router = createRouter({
       component: () => import('../views/ProductsPage.vue')
     },
     {
-      path: '/product/:id',
+      path: '/product/new-collection/discount/:id',
+      name: 'discountCollection',
       component: () => import('../views/ProductPage.vue')
-    }
+    },
+    {
+      path: '/help',
+      component: () => import('../views/HelpPage.vue'),
+      children: [
+        {
+          path: 'delivery',
+          component: () => import('../views/HelpDeliveryPage.vue')
+        },
+        {
+          path: 'guarantee',
+          component: () => import('../views/HelpGuaranteePage.vue')
+        },
+        {
+          path: 'service',
+          component: () => import('../views/HelpServicePage.vue')
+        },
+      ]
+    },
+
   ],
 })
 
